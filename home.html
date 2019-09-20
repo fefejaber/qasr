@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+
+<script type="text/javascript">
+// Javascript Functions //
+
+//##########################################//
+// ########## Sugestion Box ################//
+// #########################################//
+
+
+function lookup(inputString) {
+		if(inputString.length == 0) {
+			// Hide the suggestion box.
+			$('#suggestions').hide();
+		} else {
+			$.post("rpc.php", {queryString: ""+inputString+""}, function(data){
+				if(data.length >0) {
+					$('#suggestions').show();
+					$('#autoSuggestionsList').html(data);
+				}
+			});
+		}
+	} // lookup
+	
+	function fill(thisValue) {
+		$('#inputString').val(thisValue);
+		setTimeout("$('#suggestions').hide();", 200);
+	}
+	
+function showResult(str)
+{
+if (str.length==0)
+  { 
+  document.getElementById("livesearch").innerHTML="";
+  document.getElementById("livesearch").style.border="0px";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
+    document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+    }
+  }
+xmlhttp.open("GET","livesearch.php?q="+str,true);
+xmlhttp.send();
+}
+
+// Are you sure function
+function makesure() {
+		if (confirm('Are you sure?')) {
+			return true;
+		}
+		else {
+			return false;
+			}
+		}
+
+	
+</script>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>QasrElmaskoofResturant.com</title>
+   
+    
+	<!-- core CSS -->
+    
+    <link href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/css/main.css" rel="stylesheet">
+    <link href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/css/font-awesome.min.css" rel="stylesheet">
+    <link href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/css/animate.min.css" rel="stylesheet">
+    <link href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/css/prettyPhoto.css" rel="stylesheet">
+    <link href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/css/bootstrap.min.css" rel="stylesheet">
+    <link href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/css/responsive.css" rel="stylesheet">     
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head>
+
+<body class="homepage" >
+
+
+
+<style>
+img {
+    max-width: 100%;
+    height: auto;
+    
+    
+}
+   
+</style>
+
+<header id="header">
+        <nav class="navbar navbar-inverse" role="banner" style="background:#F6CECE" >
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/home.html"><img src="images/rsz_3p-trans.png" alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/home.html">Home</a></li>
+                       <!-- <li><a href="\add_meal.php">Add</a></li>-->
+                        <li><a href="\api.php">API</a></li>
+                        <li><a href="https://forum.kodi.tv/showthread.php?tid=282387">Forum</a>
+                        <a href="https://www.facebook.com/qaser.elmaskoof/">
+                        <img src="facebook_icon.png">
+                        </a> <a href="https://www.instagram.com/qasr.elmaskoof/">
+                        <img src="rsz_new-instagram.png"></a></li>
+						<li><div class="search">
+                                <form role="form" action="file:///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/browse.html">
+									<input type="text" name="s" class="search-form" autocomplete="off" placeholder=" Search"  />
+                                </form>
+                           </div>
+						</li>
+					</ul>
+					
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
+<div class="container"></div>
+
+<section id="feature" >
+
+	<div class="container">
+	<div class="center">
+    
+<table style="width:100%">
+
+
+	<tr>
+        <td style="width:20%">
+			<img src="images/rsz_1iraq-icon.png" alt="Plate Left" /></td>
+			<td>
+			
+			   <td  align  = "center"   style ="color:#FFFFFF"  >
+			 <h1>Welcome to Qasr Elmaskoof</h1> 
+           Welcome to Qasr Elmaskoof Restaurant for Iraqi food and shame by specialized hands.<br>
+          
+        
+            </td>
+        <td style="width:20%"><img src="images/Bahrain-icon.png" alt="Plate Right" /></td>
+	</tr>
+</table>
+<br><br><br>
+<img src="images/separator.jpg" style="width: 100%; object-fit: contain"><br>
+	
+	<table width = "400" align = "center">
+		<tr>
+			<td>
+				<form class="navbar-form" action="../browse.php" autocomplete="off">
+					<div class="input-group">
+					<input type="text" name="s" class="form-control" autocomplete="off" placeholder="Search for a Meal..."  />
+					<div class="input-group-btn">
+						<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+					</div>
+					</div>
+				</form>
+			</td>
+		</tr>
+	</table>
+	
+	<img src="images/separator.jpg" style="width: 100%; object-fit: contain"><br>
+    </div>    
+    <div class="container">
+           <div class="center"  style ="color:#FFFFFF">
+	
+            <h3> Latest Meals </h3>
+            <a href='///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/images/FriedRice.html'>
+            <div class='card card-1' >
+            <img src= '///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/images/rsz_1fried.jpg' width='190' height='190'/>
+            </div></a>
+            <a href='///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/images/Dollmah.html#prettyPhoto'><div class='card card-1'>
+            <img src= 'images/rsz_dollmah.jpg' width='190' height='190'/>
+            </div></a><a href='/meal/52979-Bitterballen-(Dutch-meatballs)-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/lhqev81565090111.jpg' width='190' height='190'/></div>
+            </a><a href='/meal/52978-Kumpir-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/mlchx21564916997.jpg' width='190' height='190'/>
+            </div></a><a href='/meal/52977-Corba-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/58oia61564916529.jpg' width='190' height='190'/>
+            </div></a><a href='/meal/52976-Cashew-Ghoriba-Biscuits-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/t3r3ka1560461972.jpg' width='190' height='190'/>
+            </div></a><a href='/meal/52975-Tuna-and-Egg-Briks-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/2dsltq1560461468.jpg' width='190' height='190'/>
+            </div></a><a href='/meal/52974-Keleya-Zaara-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/8x09hy1560460923.jpg' width='190' height='190'/>
+            </div></a><a href='/meal/52973-Leblebi-Soup-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/x2fw9e1560460636.jpg' width='190' height='190'/>
+            </div></a><a href='/meal/52972-Tunisian-Lamb-Soup-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/t8mn9g1560460231.jpg' width='190' height='190'/></div></a>			<br><br>
+			<img src="images/separator.jpg" style="width: 100%; object-fit: contain"><br>
+			<h3> Popular Ingredients</h3>
+			
+			<td style="width:60%; vertical-align:top;">
+			<table style="width:100%">
+			<tr>
+			<td align='center'>
+                    
+						<a href='///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/images/chicken.html' />
+						<figure>						
+						<img src= 'images/farm.png' width='217' height='217'/>
+						<figcaption><br>Chicken</figcaption>
+						</figure>
+					</a></td>
+					
+					<td align='center'>
+						<a href='ingredient.php?c=2' />
+						<figure >						
+						<img src= 'images/media552df78f5d23b.png' width='217' height='217'/>
+						<figcaption><br>Fish</figcaption>
+						</figure>
+					</a></td>
+					
+					<td align='center'>
+						<a href='///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/images/Beef.html' />
+						<figure>						
+						<img src= 'images/lamb1.png' width='150' height='150'/>
+						<figcaption><br>Beef</figcaption>
+						</figure>
+					</a></td>
+					<td align='center'>
+						<a href='ingredient.php?c=4' />
+						<figure>						
+						<img src= 'images/spices.png' width='217' height='217'/>
+						<figcaption><br>Spices</figcaption>
+						</figure>
+					</a></td>
+					<td align='center'>
+						<a href='ingredient.php?c=5' />
+						<figure>						
+						<img src= 'images/shrimp2.png' width='217' height='217'/>
+						<figcaption><br>Shrimp</figcaption>
+						</figure>
+					</a>	</td></tr></table><br>			</td>		<br>
+			<img src="images/separator.jpg" style="width: 100%; object-fit: contain"><br>
+            
+			<h3> Random Meals </h3>
+            <a href='/meal/52916-Pear-Tarte-Tatin-Recipe'>
+            <div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/rxvxrr1511797671.jpg' width='190' height='190'/>
+            </div>
+            </a><a href='/meal/52931-Sugar-Pie-Recipe'>
+            <div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/yrstur1511816601.jpg' width='190' height='190'/>
+            </div></a><a href='/meal/52894-Battenberg-Cake-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/ywwrsp1511720277.jpg' width='190' height='190'/>
+            </div></a><a href='/meal/52770-Spaghetti-Bolognese-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/sutysw1468247559.jpg' width='190' height='190'/>
+            </div></a><a href='/meal/52780-Potato-Gratin-with-Chicken-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/qwrtut1468418027.jpg' width='190' height='190'/>
+            </div></a><a href='/meal/52793-Sticky-Toffee-Pudding-Ultimate-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/xrptpq1483909204.jpg' width='190' height='190'/>
+            </div></a><a href='/meal/52922-Prawn-&-Fennel-Bisque-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/rtwwvv1511799504.jpg' width='190' height='190'/></div></a>
+            <a href='/meal/52767-Bakewell-tart-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/wyrqqq1468233628.jpg' width='190' height='190'/>
+            </div></a><a href='/meal/52960-Salmon-Avocado-Salad-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/1549542994.jpg' width='190' height='190'/>
+            </div></a><a href='/meal/52795-Chicken-Handi-Recipe'><div class='card card-1'>
+            <img src= 'https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg' width='190' height='190'/></div></a>			
+		   </div>
+
+		   <div class="center"  style ="color:#FFFFFF">
+				
+			<h3> Browse Country </h3>
+            
+				<a href='/browse.php?a=British'>
+				<img src='/images/icons/flags/big/64/gb.png'></a>
+				
+				<a href='/browse.php?a=American'>
+				<img src='/images/icons/flags/big/64/us.png'></a>
+				
+				<a href='/browse.php?a=French'>
+				<img src='/images/icons/flags/big/64/fr.png'></a>
+				
+				<a href='/browse.php?a=Canadian'>
+				<img src='/images/icons/flags/big/64/ca.png'></a>
+				
+				<a href='/browse.php?a=Jamaican'>
+				<img src='/images/icons/flags/big/64/jm.png'></a>
+				
+				<a href='/browse.php?a=Chinese'>
+				<img src='/images/icons/flags/big/64/cn.png'></a>
+				
+				<a href='/browse.php?a=Dutch'>
+				<img src='/images/icons/flags/big/64/nl.png'></a>
+				
+				<a href='/browse.php?a=Egyptian'>
+				<img src='/images/icons/flags/big/64/eg.png'></a>
+				
+				<a href='/browse.php?a=Greek'>
+				<img src='/images/icons/flags/big/64/gr.png'></a>
+				
+				<a href='/browse.php?a=Indian'>
+				<img src='/images/icons/flags/big/64/in.png'></a>
+				
+				<a href='/browse.php?a=Irish'>
+				<img src='/images/icons/flags/big/64/ir.png'></a>
+				
+				<a href='/browse.php?a=Italian'>
+				<img src='/images/icons/flags/big/64/it.png'></a>
+				
+				<a href='/browse.php?a=Japanese'>
+				<img src='/images/icons/flags/big/64/jp.png'></a>
+				
+				<a href='/browse.php?a=Kenyan'>
+				<img src='/images/icons/flags/big/64/kn.png'></a>
+				
+				<a href='/browse.php?a=Malaysian'>
+				<img src='/images/icons/flags/big/64/my.png'></a>
+				
+				<a href='/browse.php?a=Mexican'>
+				<img src='/images/icons/flags/big/64/mx.png'></a>
+				
+				<a href='/browse.php?a=Bahrain'>
+				<img src='rsz_1th.jpg' width='64' height='64'></a>
+				
+				<a href='/browse.php?a=Croatian'>
+				<img src='/images/icons/flags/big/64/hr.png'></a>
+				
+				<a href='/browse.php?a=Norwegian'>
+				<img src='/images/icons/flags/big/64/no.png'></a>
+				
+				<a href='/browse.php?a=Portuguese'>
+				<img src='/images/icons/flags/big/64/pt.png'></a>
+				
+				<a href='/browse.php?a=Russian'>
+				<img src='/images/icons/flags/big/64/ru.png'></a>
+				
+				<a href='/browse.php?a=Argentinian'>
+				<img src='/images/icons/flags/big/64/ar.png'></a>
+				
+				<a href='/browse.php?a=Spanish'>
+				<img src='/images/icons/flags/big/64/es.png'></a>
+				
+				<a href='/browse.php?a=Slovakian'>
+				<img src='/images/icons/flags/big/64/sk.png'></a>
+				
+				<a href='/browse.php?a=Thai'>
+				<img src='/images/icons/flags/big/64/th.png'></a>
+				
+				<a href='/browse.php?a=Saudi Arabian'>
+				<img src='/images/icons/flags/big/64/sa.png'></a>
+				
+				<a href='/browse.php?a=Vietnamese'>
+				<img src='/images/icons/flags/big/64/vn.png'></a>
+				
+				<a href='/browse.php?a=Turkish'>
+				<img src='/images/icons/flags/big/64/tr.png'></a>
+				
+				<a href='/browse.php?a=Syrian'>
+				<img src='/images/icons/flags/big/64/sy.png'></a>
+				
+				<a href='/browse.php?a=Algerian'>
+				<img src='/images/icons/flags/big/64/dz.png'></a>
+				
+				<a href='/browse.php?a=Tunisian'>
+				<img src='/images/icons/flags/big/64/tn.png'></a>
+				
+            <br><br>
+            <h3> Browse Name<br></h3><h2> 
+			<a href='/browse.php?b=a'/>A</a> / <a href='/browse.php?b=b'/>B</a> / <a href='/browse.php?b=c'/>C</a> / <a href='/browse.php?b=d'/>D</a> / <a href='/browse.php?b=e'/>E</a> / <a href='/browse.php?b=f'/>F</a> / <a href='/browse.php?b=g'/>G</a> / <a href='/browse.php?b=h'/>H</a> / <a href='/browse.php?b=i'/>I</a> / <a href='/browse.php?b=j'/>J</a> / <a href='/browse.php?b=k'/>K</a> / <a href='/browse.php?b=l'/>L</a> / <a href='/browse.php?b=m'/>M</a> / <a href='/browse.php?b=n'/>N</a> / <a href='/browse.php?b=o'/>O</a> / <a href='/browse.php?b=p'/>P</a> / <a href='/browse.php?b=q'/>Q</a> / <a href='/browse.php?b=r'/>R</a> / <a href='/browse.php?b=s'/>S</a> / <a href='/browse.php?b=t'/>T</a> / <a href='/browse.php?b=u'/>U</a> / <a href='/browse.php?b=v'/>V</a> / <a href='/browse.php?b=w'/>W</a> / <a href='/browse.php?b=x'/>X</a> / <a href='/browse.php?b=y'/>Y</a> / <a href='/browse.php?b=z'/>Z</a></h2>
+			</div>
+        </div><!--/.container-->
+    </section><!--/#feature-->
+
+<footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    &copy; 2018 Qasr Elmaskoof Resturant</a> <br>Proudly built in
+                     <img src='images/rsz_1th.jpg' width='16' height='16'/>
+                </div>
+                <div class="col-sm-6">
+					
+				</div>
+                <div class="col-sm-3">
+                    <ul class="pull-right">
+                        <li><a href="../about.php">About</a></li>
+                        <li><a href="../faq.php">Faq</a></li>
+                        <li><a href="../contact.php">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->    
+
+    <script src="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/jquery.isotope.min.js"></script>
+    <script src="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/jquery.js"></script>
+    <script src="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/jquery.prettyPhoto.js"></script>
+    <script src="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/main.js"></script>
+    <script src="file:///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/bootstrap.min.js"></script>
+    <script src="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/wow.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+
+<script type="text/javascript">
+// Javascript Functions //
+
+//##########################################//
+// ########## Sugestion Box ################//
+// #########################################//
+
+
+function lookup(inputString) {
+		if(inputString.length == 0) {
+			// Hide the suggestion box.
+			$('#suggestions').hide();
+		} else {
+			$.post("rpc.php", {queryString: ""+inputString+""}, function(data){
+				if(data.length >0) {
+					$('#suggestions').show();
+					$('#autoSuggestionsList').html(data);
+				}
+			});
+		}
+	} // lookup
+	
+	function fill(thisValue) {
+		$('#inputString').val(thisValue);
+		setTimeout("$('#suggestions').hide();", 200);
+	}
+	
+function showResult(str)
+{
+if (str.length==0)
+  { 
+  document.getElementById("livesearch").innerHTML="";
+  document.getElementById("livesearch").style.border="0px";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
+    document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+    }
+  }
+xmlhttp.open("GET","livesearch.php?q="+str,true);
+xmlhttp.send();
+}
+
+// Are you sure function
+function makesure() {
+		if (confirm('Are you sure?')) {
+			return true;
+		}
+		else {
+			return false;
+			}
+		}
+
+	
+</script>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Browse | QasrElmaskoofResturant</title>
+	
+	<!-- core CSS -->
+   <link href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/main.css" rel="stylesheet">
+    <link href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/font-awesome.min.css" rel="stylesheet">
+    <link href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/animate.min.css" rel="stylesheet">
+    <link href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/prettyPhoto.css" rel="stylesheet">
+    <link href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/bootstrap.min.css" rel="stylesheet">
+    <link href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/responsive.css" rel="stylesheet">     
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body class="homepage">
+
+    <header id="header">
+        <nav class="navbar navbar-inverse" role="banner" style="background:#F6CECE">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/home.html"><img src="rsz_3p-trans.png" alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/home.html">Home</a></li>
+                       <!-- <li><a href="\add_meal.php">Add</a></li>-->
+                        <li><a href="\api.php">API</a></li>
+                               <a href="https://www.facebook.com/qaser.elmaskoof/">
+                        <img src="facebook_icon.png">
+                        </a> <a href="https://www.instagram.com/qasr.elmaskoof/">
+                        <img src="rsz_new-instagram.png"></a></li>					
+                        	<li><div class="search">
+                                <form role="form" action="file:///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/browse.html">
+									<input type="text" name="s" class="search-form" autocomplete="off" placeholder=" Search"  />
+                                </form>
+                           </div>
+						</li>
+					</ul>
+					
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
+    <section id="feature" >
+        <div class="container">
+           <div class="center">
+				
+			<div class='row'><div class='col-sm-3'><a href='///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/FriedRice.html'><a href='///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/FriedRice.html'><img src='file:///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/fried.jpg' width='200'> <br>Fried Rice</a></div>         </div>
+
+            <div class="center"><br>
+			<h3>Browse Meals</h3><br><h2>
+			<a href='/browse.php?b=a'/>A</a> / <a href='/browse.php?b=b'/>B</a> / <a href='/browse.php?b=c'/>C</a> / <a href='/browse.php?b=d'/>D</a> / <a href='/browse.php?b=e'/>E</a> / <a href='/browse.php?b=e'/>F</a> / <a href='/browse.php?b=g'/>G</a> / <a href='/browse.php?b=h'/>H</a> / <a href='/browse.php?b=i'/>I</a> / <a href='/browse.php?b=j'/>J</a> / <a href='/browse.php?b=k'/>K</a> / <a href='/browse.php?b=l'/>L</a> / <a href='/browse.php?b=m'/>M</a> / <a href='/browse.php?b=n'/>N</a> / <a href='/browse.php?b=o'/>O</a> / <a href='/browse.php?b=p'/>P</a> / <a href='/browse.php?b=q'/>Q</a> / <a href='/browse.php?b=r'/>R</a> / <a href='/browse.php?b=s'/>S</a> / <a href='/browse.php?b=t'/>T</a> / <a href='/browse.php?b=u'/>U</a> / <a href='/browse.php?b=v'/>V</a> / <a href='/browse.php?b=w'/>W</a> / <a href='/browse.php?b=x'/>X</a> / <a href='/browse.php?b=y'/>Y</a> / <a href='/browse.php?b=z'/>Z</a>			</h2>
+
+			</div>
+        </div><!--/.container-->
+    </section><!--/#feature-->
+
+
+<footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                 &copy; 2018 Qasr Elmaskoof Resturant</a> <br>Proudly built in
+                     <img src='rsz_1th.jpg' width='16' height='16'/>                 </div>
+               
+                <div class="col-sm-3">
+                    <ul class="pull-right">
+                        <li><a href="../about.php">About</a></li>
+                        <li><a href="../faq.php">Faq</a></li>
+                        <li><a href="../contact.php">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer--> 	
+    <script src="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/jquery.isotope.min.js"></script>
+    <script src="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/jquery.js"></script>
+    <script src="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/jquery.prettyPhoto.js"></script>
+    <script src="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/main.js"></script>
+    <script src="file:///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/bootstrap.min.js"></script>
+    <script src="///Users/fefekarim/Desktop/Qser%20Elmaskoof%20Website/wow.min.js"></script>
+    <script>
+            $('#form').submit(function(e) {
+
+                var form = $(this);
+                var formdata = false;
+                if(window.FormData){
+                    formdata = new FormData(form[0]);
+                }
+
+                var formAction = form.attr('action');
+
+                $.ajax({
+                    type        : 'POST',
+                    url         : 'imagepost.php',
+                    cache       : false,
+                    data        : formdata ? formdata : form.serialize(),
+                    contentType : false,
+                    processData : false,
+
+                    success: function(response) {
+                        if(response != 'JPG files only 700x700 dimensions') {
+                            //$('#messages').addClass('alert alert-success').text(response);
+                            // OP requested to close the modal
+                            $('#myModal').modal('hide');
+							location.reload();
+						} else {
+                            $('#messages').addClass('alert alert-danger').text(response);
+                        }
+                    }
+                });
+                e.preventDefault();
+            });
+        </script>	
+</body>
+</html>
